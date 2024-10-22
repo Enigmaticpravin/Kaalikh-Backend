@@ -29,7 +29,7 @@ function generateTxnId() {
   return crypto.randomBytes(8).toString('hex');
 }
 
-// Render the payment form
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
