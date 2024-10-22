@@ -2,8 +2,13 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const crypto = require('crypto');
+const cors = require('cors'); // Import CORS
 
 const app = express();
+
+// Enable CORS
+app.use(cors()); // Add this line to enable CORS for all routes
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
