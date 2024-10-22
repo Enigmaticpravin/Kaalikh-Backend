@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const crypto = require('crypto');
@@ -10,11 +11,11 @@ const port = process.env.PORT || 3000;
 
 // PayU Configuration
 const payuConfig = {
-  merchantKey: 'fvJm6S',  // Replace with your PayU merchant key
-  merchantSalt: 'B7xJfhM2m0u8lnLx1rWAWu9c5vlwQ2Bb',  // Replace with your PayU merchant salt
-  payuBaseUrl: 'https://test.payu.in/_payment',  // PayU payment URL for production
-  successUrl: 'http://localhost:3000/success',  // Replace with your success callback URL
-  failureUrl: 'http://localhost:3000/failure'   // Replace with your failure callback URL
+  merchantKey: process.env.PAYU_MERCHANT_KEY,
+  merchantSalt: process.env.PAYU_MERCHANT_SALT,
+  payuBaseUrl: process.env.PAYU_BASE_URL,
+  successUrl: process.env.SUCCESS_URL,
+  failureUrl: process.env.FAILURE_URL
 };
 
 // Generate hash using SHA512
