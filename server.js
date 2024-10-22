@@ -29,11 +29,6 @@ function generateTxnId() {
   return crypto.randomBytes(8).toString('hex');
 }
 
-
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
-
 // Handle the PayU payment request
 app.post('/paynow', (req, res) => {
   const txnId = generateTxnId();
