@@ -1,5 +1,5 @@
 require('dotenv').config();
-const crypto = require('crypto');
+const CryptoJS = require("crypto-js");
 
 // PayU Configuration
 const payuConfig = {
@@ -12,9 +12,9 @@ const payuConfig = {
 
 // Generate hash using SHA512
 function generateHash(data) {
-  const hashString = `${payuConfig.merchantKey}|${data.txnid}|${data.amount}|${data.productinfo}|${data.firstname}|${data.email}|||||||||||${payuConfig.merchantSalt}`;
-  return crypto.createHash('sha512').update(hashString).digest('hex');
-}
+    const hashString = `${payuConfig.merchantKey}|${data.txnid}|${data.amount}|${data.productinfo}|${data.firstname}|${data.email}|||||||||||${payuConfig.merchantSalt}`;
+    return CryptoJS.SHA512(hashString).toString();
+  }
 
 // Generate a unique transaction ID
 function generateTxnId() {
