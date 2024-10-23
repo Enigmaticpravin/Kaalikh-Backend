@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/paynow", "destination": "/api/server.js" }
+    ]
+  }
+  
