@@ -1,6 +1,8 @@
 {
     "rewrites": [
-      { "source": "/paynow", "destination": "/api/server.js" }
+      { "source": "/paynow", "destination": "/api/paynow.js" },
+      { "source": "/success", "destination": "/api/success.js" },
+      { "source": "/failure", "destination": "/api/failure.js" }
     ]
   }
   
